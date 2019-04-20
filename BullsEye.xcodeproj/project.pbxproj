@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		EC24DB87226AB65400E8F698 /* ViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC24DB86226AB65400E8F698 /* ViewControllerHelper.swift */; };
+		EC2728D9226B733A00299D71 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2728D8226B733A00299D71 /* AboutViewController.swift */; };
+		EC2728DC226B7FBF00299D71 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = EC2728DB226B7FBF00299D71 /* BullsEye.html */; };
+		EC2728DF226B839800299D71 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2728DE226B839700299D71 /* WebKit.framework */; };
 		EC4354332267681C000346F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4354322267681C000346F2 /* AppDelegate.swift */; };
-		EC4354352267681C000346F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4354342267681C000346F2 /* ViewController.swift */; };
+		EC4354352267681C000346F2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4354342267681C000346F2 /* MainViewController.swift */; };
 		EC4354382267681C000346F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4354362267681C000346F2 /* Main.storyboard */; };
 		EC43543A2267681D000346F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4354392267681D000346F2 /* Assets.xcassets */; };
 		EC43543D2267681D000346F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC43543B2267681D000346F2 /* LaunchScreen.storyboard */; };
@@ -17,9 +20,12 @@
 
 /* Begin PBXFileReference section */
 		EC24DB86226AB65400E8F698 /* ViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHelper.swift; sourceTree = "<group>"; };
+		EC2728D8226B733A00299D71 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		EC2728DB226B7FBF00299D71 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
+		EC2728DE226B839700299D71 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		EC43542F2267681C000346F2 /* BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4354322267681C000346F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC4354342267681C000346F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC4354342267681C000346F2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EC4354372267681C000346F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC4354392267681D000346F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC43543C2267681D000346F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC2728DF226B839800299D71 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,11 +52,37 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		EC2728D7226B72F300299D71 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC4354342267681C000346F2 /* MainViewController.swift */,
+				EC2728D8226B733A00299D71 /* AboutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC2728DA226B7FA700299D71 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC2728DB226B7FBF00299D71 /* BullsEye.html */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC2728DD226B839700299D71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC2728DE226B839700299D71 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EC4354262267681C000346F2 = {
 			isa = PBXGroup;
 			children = (
 				EC4354312267681C000346F2 /* BullsEye */,
 				EC4354302267681C000346F2 /* Products */,
+				EC2728DD226B839700299D71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,9 +97,10 @@
 		EC4354312267681C000346F2 /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				EC2728DA226B7FA700299D71 /* View */,
+				EC2728D7226B72F300299D71 /* Controller */,
 				EC24DB85226AB62000E8F698 /* Helper */,
 				EC4354322267681C000346F2 /* AppDelegate.swift */,
-				EC4354342267681C000346F2 /* ViewController.swift */,
 				EC4354362267681C000346F2 /* Main.storyboard */,
 				EC4354392267681D000346F2 /* Assets.xcassets */,
 				EC43543B2267681D000346F2 /* LaunchScreen.storyboard */,
@@ -134,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC43543D2267681D000346F2 /* LaunchScreen.storyboard in Resources */,
+				EC2728DC226B7FBF00299D71 /* BullsEye.html in Resources */,
 				EC43543A2267681D000346F2 /* Assets.xcassets in Resources */,
 				EC4354382267681C000346F2 /* Main.storyboard in Resources */,
 			);
@@ -146,8 +181,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC4354352267681C000346F2 /* ViewController.swift in Sources */,
+				EC4354352267681C000346F2 /* MainViewController.swift in Sources */,
 				EC4354332267681C000346F2 /* AppDelegate.swift in Sources */,
+				EC2728D9226B733A00299D71 /* AboutViewController.swift in Sources */,
 				EC24DB87226AB65400E8F698 /* ViewControllerHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
