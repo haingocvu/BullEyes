@@ -14,7 +14,7 @@
         <scene sceneID="0mf-XE-9vg">
             <objects>
                 <viewController id="QRC-Yt-tuS" customClass="AboutViewController" customModule="BullsEye" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="psr-fZ-MQK">
+                    <view key="view" contentMode="scaleToFill" id="psr-fZ-MQK" customClass="AboutView" customModule="BullsEye" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -60,10 +60,10 @@
                             <constraint firstItem="6sg-0w-eog" firstAttribute="top" secondItem="oaT-Jl-O3n" secondAttribute="bottom" constant="8" id="zo6-eY-bdm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ixj-Fw-23U"/>
+                        <connections>
+                            <outlet property="webview" destination="oaT-Jl-O3n" id="lFj-al-Iji"/>
+                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="webview" destination="oaT-Jl-O3n" id="UqG-KW-Iyc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfG-ht-4Xi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +73,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="BullsEye" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MainView" customModule="BullsEye" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -213,13 +213,13 @@
                             <constraint firstItem="sfr-rh-bMN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yFw-KK-abQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outlet property="roundLabel" destination="BCH-1a-8y8" id="82j-dN-Hhj"/>
+                            <outlet property="slider" destination="NN5-Tm-OoL" id="YOR-Tk-ymw"/>
+                            <outlet property="targetLabel" destination="Zgb-42-i8z" id="8WA-5r-7Dp"/>
+                            <outlet property="totalScoreLabel" destination="WIJ-82-L41" id="kTs-bC-hsd"/>
+                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="roundLabel" destination="BCH-1a-8y8" id="J1L-Kx-sOG"/>
-                        <outlet property="slider" destination="NN5-Tm-OoL" id="emg-fP-Ad8"/>
-                        <outlet property="targetLabel" destination="Zgb-42-i8z" id="OVF-21-Kqg"/>
-                        <outlet property="totalScoreLabel" destination="WIJ-82-L41" id="rAH-Gz-gvs"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

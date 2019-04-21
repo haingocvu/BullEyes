@@ -11,12 +11,18 @@ import WebKit
 
 class AboutViewController: UIViewController {
 	
-	@IBOutlet weak var webview: WKWebView!
+	private weak var aboutView: AboutView! {
+		guard isViewLoaded else {
+			return nil
+		}
+		return (view as! AboutView)
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		if let url = Bundle.main.url(forResource: "BullsEye", withExtension: "html") {
 			let request = URLRequest(url: url)
-			webview.load(request)
+			aboutView.webview.load(request)
 		}
 	}
 	@IBAction func close() {

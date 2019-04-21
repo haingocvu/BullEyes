@@ -16,6 +16,9 @@
 		EC4354382267681C000346F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4354362267681C000346F2 /* Main.storyboard */; };
 		EC43543A2267681D000346F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4354392267681D000346F2 /* Assets.xcassets */; };
 		EC43543D2267681D000346F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC43543B2267681D000346F2 /* LaunchScreen.storyboard */; };
+		EC5A59AC226C483500EF70A1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5A59AB226C483500EF70A1 /* MainView.swift */; };
+		EC5A59AE226C48E100EF70A1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5A59AD226C48E100EF70A1 /* AboutView.swift */; };
+		EC5A59B0226C4E0600EF70A1 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5A59AF226C4E0600EF70A1 /* GameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		EC4354392267681D000346F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC43543C2267681D000346F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC43543E2267681D000346F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC5A59AB226C483500EF70A1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		EC5A59AD226C48E100EF70A1 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		EC5A59AF226C4E0600EF70A1 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				EC2728DB226B7FBF00299D71 /* BullsEye.html */,
+				EC5A59AB226C483500EF70A1 /* MainView.swift */,
+				EC5A59AD226C48E100EF70A1 /* AboutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,6 +105,7 @@
 		EC4354312267681C000346F2 /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				EC5A59B1226C4E0E00EF70A1 /* Model */,
 				EC2728DA226B7FA700299D71 /* View */,
 				EC2728D7226B72F300299D71 /* Controller */,
 				EC24DB85226AB62000E8F698 /* Helper */,
@@ -107,6 +116,14 @@
 				EC43543E2267681D000346F2 /* Info.plist */,
 			);
 			path = BullsEye;
+			sourceTree = "<group>";
+		};
+		EC5A59B1226C4E0E00EF70A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC5A59AF226C4E0600EF70A1 /* GameModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +201,9 @@
 				EC4354352267681C000346F2 /* MainViewController.swift in Sources */,
 				EC4354332267681C000346F2 /* AppDelegate.swift in Sources */,
 				EC2728D9226B733A00299D71 /* AboutViewController.swift in Sources */,
+				EC5A59AC226C483500EF70A1 /* MainView.swift in Sources */,
+				EC5A59AE226C48E100EF70A1 /* AboutView.swift in Sources */,
+				EC5A59B0226C4E0600EF70A1 /* GameModel.swift in Sources */,
 				EC24DB87226AB65400E8F698 /* ViewControllerHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

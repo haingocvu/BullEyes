@@ -10,23 +10,24 @@ import UIKit
 
 class MainViewController: UIViewController {
 	
-	@IBOutlet weak var slider: UISlider!
-	@IBOutlet weak var targetLabel: UILabel!
-	@IBOutlet weak var totalScoreLabel: UILabel!
-	@IBOutlet weak var roundLabel: UILabel!
-	var currentValue = 0
-	var targetValue = 0
-	var totalScore = 0
-	var round = 0
+	private var gameModel: GameModel!
+	
+	private weak var mainView: MainView! {
+		guard isViewLoaded else {
+			return nil
+		}
+		return (view as! MainView)
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		gameModel = GameModel()
 		customLookAndFeelForSlider()
 		startNewGame()
 	}
 	
 	@IBAction func showAlert() {
-		let different = calcDiff(num1: targetValue, num2: currentValue)
+		let different = calcDiff(num1: gameModel.targetValue, num2: gameModel.currentValue)
 		var point = 100 - different
 		let title: String!
 		if different == 0 {
@@ -39,7 +40,7 @@ class MainViewController: UIViewController {
 		} else {
 			title = "Not ever close..."
 		}
-		totalScore += point
+		gameModel.totalScore += point
 		let message = "your point is: \(point)"
 		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 		let alertAction = UIAlertAction(title: "OK", style: .default) {
@@ -50,11 +51,11 @@ class MainViewController: UIViewController {
 		present(alert, animated: true)
 	}
 	@IBAction func sliderMove(_ slider: UISlider) {
-		currentValue = lroundf(slider.value)
+		gameModel.currentValue = lroundf(slider.value)
 	}
 	@IBAction func startNewGame() {
-		totalScore = 0
-		round = 0
+		gameModel.totalScore = 0
+		gameModel.round = 0
 		startNewRound()
 		let transition = CATransition()
 		transition.type = .fade
@@ -63,29 +64,29 @@ class MainViewController: UIViewController {
 		view.layer.add(transition, forKey: nil)
 	}
 	func startNewRound() {
-		targetValue = Int.random(in: 1...100)
-		currentValue = 50
-		slider.value = Float(currentValue)
-		round += 1
+		gameModel.targetValue = Int.random(in: 1...100)
+		gameModel.currentValue = 50
+		mainView.slider.value = Float(gameModel.currentValue)
+		gameModel.round += 1
 		updateLabels()
 	}
 	func updateLabels() {
-		targetLabel.text = String(targetValue)
-		totalScoreLabel.text = String(totalScore)
-		roundLabel.text = String(round)
+		mainView.targetLabel.text = String(gameModel.targetValue)
+		mainView.totalScoreLabel.text = String(gameModel.totalScore)
+		mainView.roundLabel.text = String(gameModel.round)
 	}
 	func customLookAndFeelForSlider() {
 		let thumbImageNormal = UIImage(named: "SliderThumb-Normal")
-		slider.setThumbImage(thumbImageNormal, for: .normal)
+		mainView.slider.setThumbImage(thumbImageNormal, for: .normal)
 		let thumbImageHighlight = UIImage(named: "SliderThumb-Highlighted")
-		slider.setThumbImage(thumbImageHighlight, for: .highlighted)
+		mainView.slider.setThumbImage(thumbImageHighlight, for: .highlighted)
 		let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
 		let trackLeftImage = UIImage(named: "SliderTrackLeft")
 		let trackLeftResizable = trackLeftImage?.resizableImage(withCapInsets: insets)
-		slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
+		mainView.slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
 		let trackRightImage = UIImage(named: "SliderTrackRight")
 		let trackRightResizable = trackRightImage?.resizableImage(withCapInsets: insets)
-		slider.setMaximumTrackImage(trackRightResizable, for: .normal)
+		mainView.slider.setMaximumTrackImage(trackRightResizable, for: .normal)
 	}
 }
 
